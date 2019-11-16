@@ -7,8 +7,8 @@ module.exports = {
   },
   extends: [
     'airbnb',
-    "airbnb/hooks",
-    "eslint:recommended",
+    'airbnb/hooks',
+    'eslint:recommended',
     'plugin:import/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended'
@@ -30,5 +30,5 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['import', 'react'],
-  rules: { 'react/jsx-uses-react': 1 }
+  rules: { 'react/jsx-uses-react': 1, 'react/jsx-props-no-spreading': off }
 };
