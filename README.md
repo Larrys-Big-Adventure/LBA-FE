@@ -1,4 +1,5 @@
-<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/76a3de8e-270c-4adf-89d5-3a3863da74e6/deploy-status)](https://app.netlify.com/sites/open-sauced/deploys) -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21a67251-1966-4ba2-880e-24619fcb13da/deploy-status)](https://app.netlify.com/sites/jovial-visvesvaraya-322319/deploys)
+![Travic-ci](https://travis-ci.com/Larrys-Leisurely-Adventure-Game/LLAG-FE.svg?branch=master)
 
 # Larry’s Leisurely Adventure Game
 
