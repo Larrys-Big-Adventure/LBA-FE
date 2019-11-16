@@ -12,7 +12,7 @@ cache:
 script:
   - yarn
   - yarn test
-  - run build
+  - yarn build
 
 notification:
   - email: false
