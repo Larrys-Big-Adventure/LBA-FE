@@ -7,6 +7,8 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    "airbnb/hooks",
+    "eslint:recommended",
     'plugin:import/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended'
