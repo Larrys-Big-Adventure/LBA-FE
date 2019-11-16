@@ -1,3 +1,5 @@
+const OFF = 0;
+
 module.exports = {
   parser: 'babel-eslint',
   env: {
@@ -30,5 +32,5 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['import', 'react'],
-  rules: { 'react/jsx-uses-react': 1, 'react/jsx-props-no-spreading': off }
+  rules: { 'react/jsx-uses-react': 1, 'react/jsx-props-no-spreading': OFF }
 };

@@ -1,3 +1,4 @@
-import PrivateRoute from './PrivateRoute.jsx';
+import PrivateRoute from './PrivateRoute';
+import LoginForm from './LoginForm';
 
-export { PrivateRoute };
+export { PrivateRoute, LoginForm };

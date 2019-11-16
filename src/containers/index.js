@@ -1,5 +1,5 @@
-import Home from './Home.jsx';
-import Login from './Login.jsx';
-import NoMatch from './NoMatch.jsx';
+import Home from './Home';
+import Login from './Login';
+import NoMatch from './NoMatch';
 
 export { Home, Login, NoMatch };

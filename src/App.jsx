@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Login, NoMatch } from './containers/';
-import { PrivateRoute } from './components/';
+import { Home, Login, NoMatch } from './containers';
+import { PrivateRoute } from './components';
 
 function App() {
   return (
