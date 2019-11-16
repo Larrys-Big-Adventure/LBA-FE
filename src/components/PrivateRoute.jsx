@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Route, withRouter } from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, path, history, ...rest }) => {
@@ -16,11 +17,18 @@ const PrivateRoute = ({ component: Component, path, history, ...rest }) => {
     setLoading(false);
   }, [path, history, token]);
 
-  // we're trying to mimic a Route component here.
   const render = props => (token ? <Component {...props} /> : null);
   return (
     <Route exact path={path} render={render} {...rest} loading={loading} />
   );
+};
+
+PrivateRoute.propTypes = {
+  path: PropTypes.string.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired,
+  component: PropTypes.element.isRequired
 };
 
 export default withRouter(PrivateRoute);
