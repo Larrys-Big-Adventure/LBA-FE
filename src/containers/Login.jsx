@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { LoginForm } from '../components';
 
-const Login = () => {
+const Login = ({ history }) => {
   return (
     <LoginContainer>
-      <LoginForm />
+      <LoginForm history={history} />
     </LoginContainer>
   );
 };
@@ -13,5 +14,11 @@ const Login = () => {
 const LoginContainer = styled.div`
   margin: 0 auto;
 `;
+
+Login.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
+};
 
 export default Login;

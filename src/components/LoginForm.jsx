@@ -1,6 +1,8 @@
 import React from 'react';
-import { Field, withFormik, Form } from 'formik';
 import * as Yup from 'yup';
+import { Field, withFormik, Form } from 'formik';
+
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 const LoginForm = () => {
   return (
@@ -33,7 +35,17 @@ const LoginFormWithFormik = withFormik({
     username: Yup.string().required(),
     password: Yup.string().required()
   }),
-  handleSubmit: () => {}
+  handleSubmit: (values, { props }) => {
+    axiosWithAuth()
+      .post('', values)
+      .then(res => {
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/');
+      })
+      .catch(err => {
+        console.error(err); // eslint-disable-line
+      });
+  }
 })(LoginForm);
 
 export default LoginFormWithFormik;
