@@ -4,6 +4,7 @@ const LoginForm = () => {
   return (
     <form action="">
       <input type="text" />
+      <input type="text" />
       <button type="submit">Submit</button>
     </form>
   );

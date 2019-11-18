@@ -12,8 +12,8 @@ describe('Home', () => {
     render(<Home />);
   });
 
-  it('matches previous snapshot', () => {
-    const tree = renderer(<Home />);
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
+  // it('matches previous snapshot', () => {
+  //   const tree = renderer(<Home />);
+  //   expect(tree.toJSON()).toMatchSnapshot();
+  // });
 });
