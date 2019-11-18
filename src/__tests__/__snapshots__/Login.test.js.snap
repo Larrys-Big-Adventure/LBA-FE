@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login matches previous snapshot 1`] = `
+<form
+  action=""
+>
+  <input
+    type="text"
+  />
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

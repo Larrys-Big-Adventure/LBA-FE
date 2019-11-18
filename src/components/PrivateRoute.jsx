@@ -16,19 +16,23 @@ const PrivateRoute = ({ component: Component, path, history, ...rest }) => {
     fn();
     setLoading(false);
   }, [path, history, token]);
-
   const render = props => (token ? <Component {...props} /> : null);
   return (
     <Route exact path={path} render={render} {...rest} loading={loading} />
   );
 };
 
+PrivateRoute.defaultProps = {
+  path: '*',
+  component: () => {}
+};
+
 PrivateRoute.propTypes = {
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired,
-  component: PropTypes.element.isRequired
+  component: PropTypes.func
 };
 
 export default withRouter(PrivateRoute);
