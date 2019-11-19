@@ -3,17 +3,17 @@ import '@testing-library/jest-dom/extend-expect';
 import { cleanup } from '@testing-library/react';
 import { render, renderer } from '../__testHelpers__';
 
-import { Login } from '../containers';
+import { LoginForm } from '../components';
 
 afterEach(cleanup);
 
-describe('Login', () => {
+describe('LoginForm', () => {
   it('renders without crashing', () => {
-    render(<Login history={{ push: () => {} }} />);
+    render(<LoginForm />);
   });
 
   // it('matches previous snapshot', () => {
-  //   const tree = renderer(<Login />);
+  //   const tree = renderer(<LoginForm />);
   //   expect(tree.toJSON()).toMatchSnapshot();
   // });
 });

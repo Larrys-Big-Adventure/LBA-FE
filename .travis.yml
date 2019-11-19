@@ -11,6 +11,7 @@ cache:
 
 script:
   - yarn
+  - yarn clean
   - yarn test
   - yarn build
 
