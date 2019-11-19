@@ -26,7 +26,7 @@ const LoginForm = ({ errors, touched }) => {
       )}
       <AuthInput
         component="input"
-        type="text"
+        type="password"
         name="password"
         placeholder="password"
       />
