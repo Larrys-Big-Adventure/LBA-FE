@@ -1,34 +1,55 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import * as Yup from 'yup';
+import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
 
 import axiosWithAuth from '../utils/axiosWithAuth';
-import { AuthForm, AuthInput, AuthButton } from '../styles/AuthCard';
+import {
+  AuthForm,
+  AuthInput,
+  AuthButton,
+  ErrorMessage
+} from '../styles/AuthCard';
 
-const RegisterForm = () => {
+const RegisterForm = ({ errors, touched }) => {
   return (
     <AuthForm action="">
       <AuthInput
         component="input"
         type="text"
         name="username"
-        placeholder="johnd0e123"
+        placeholder="Email"
       />
+      {touched.username && errors.username && (
+        <ErrorMessage>{errors.username}</ErrorMessage>
+      )}
       <AuthInput
         component="input"
         type="password"
         name="password1"
-        placeholder="password1"
+        placeholder="Password"
       />
+      {touched.password1 && errors.password1 && (
+        <ErrorMessage>{errors.password1}</ErrorMessage>
+      )}
       <AuthInput
         component="input"
         type="password"
         name="password2"
-        placeholder="password2"
+        placeholder="Confirm password"
       />
+      {touched.password2 && errors.password2 && (
+        <ErrorMessage>{errors.password2}</ErrorMessage>
+      )}
       <AuthButton type="submit">Submit</AuthButton>
     </AuthForm>
   );
+};
+
+RegisterForm.propTypes = {
+  touched: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
 };
 
 const mapPropsToValues = ({ username, password1, password2 }) => {
@@ -40,9 +61,16 @@ const mapPropsToValues = ({ username, password1, password2 }) => {
 };
 
 const validationSchema = Yup.object().shape({
-  username: Yup.string().required(),
-  password1: Yup.string().required(),
-  password2: Yup.string().required()
+  username: Yup.string()
+    .label('Email')
+    .email()
+    .required(),
+  password1: Yup.string()
+    .label('Password')
+    .required(),
+  password2: Yup.string()
+    .oneOf([Yup.ref('password1'), null], "Password don't match")
+    .required('Confirm password is required')
 });
 
 const handleSubmit = (values, { props, resetForm }) => {

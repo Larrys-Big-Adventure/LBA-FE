@@ -1,13 +1,11 @@
 import React from 'react';
 
-const GameTitle = () => {
-  return (
-    <h1>
-      Larrys Leisurely
-      <br />
-      Adventure Game
-    </h1>
-  );
-};
+const GameTitle = () => (
+  <h1>
+    Larrys Leisurely
+    <br />
+    Adventure Game
+  </h1>
+);
 
 export default GameTitle;

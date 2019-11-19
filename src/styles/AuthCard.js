@@ -29,6 +29,7 @@ const AuthForm = styled(Form)`
 
 const AuthButton = styled.button`
   padding: 15px;
+  margin-top: 10px;
   width: 30%;
   cursor: pointer;
 `;
@@ -36,4 +37,16 @@ const AuthButton = styled.button`
 const BottomMessage = styled.p`
   margin: 15px 0;
 `;
-export { AuthCardContainer, AuthInput, AuthForm, AuthButton, BottomMessage };
+
+const ErrorMessage = styled.p`
+  font-size: 15px;
+  color: red;
+`;
+export {
+  AuthCardContainer,
+  AuthInput,
+  AuthForm,
+  AuthButton,
+  BottomMessage,
+  ErrorMessage
+};
