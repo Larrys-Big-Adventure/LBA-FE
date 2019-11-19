@@ -5,7 +5,7 @@ import { withFormik } from 'formik';
 import axiosWithAuth from '../utils/axiosWithAuth';
 import { AuthForm, AuthInput, AuthButton } from '../styles/AuthCard';
 
-const LoginForm = () => {
+const RegisterForm = () => {
   return (
     <AuthForm action="">
       <AuthInput
@@ -16,27 +16,38 @@ const LoginForm = () => {
       />
       <AuthInput
         component="input"
-        type="text"
-        name="password"
-        placeholder="password"
+        type="password"
+        name="password1"
+        placeholder="password1"
+      />
+      <AuthInput
+        component="input"
+        type="password"
+        name="password2"
+        placeholder="password2"
       />
       <AuthButton type="submit">Submit</AuthButton>
     </AuthForm>
   );
 };
-const mapPropsToValues = ({ username, password }) => {
+
+const mapPropsToValues = ({ username, password1, password2 }) => {
   return {
     username: username || '',
-    password: password || ''
+    password1: password1 || '',
+    password2: password2 || ''
   };
 };
+
 const validationSchema = Yup.object().shape({
   username: Yup.string().required(),
-  password: Yup.string().required()
+  password1: Yup.string().required(),
+  password2: Yup.string().required()
 });
+
 const handleSubmit = (values, { props, resetForm }) => {
   axiosWithAuth()
-    .post('api/login/', values)
+    .post('api/registration/', values)
     .then(res => {
       localStorage.setItem('token', res.data.key);
       props.history.push('/');
@@ -46,11 +57,10 @@ const handleSubmit = (values, { props, resetForm }) => {
       resetForm();
     });
 };
-
-const LoginFormWithFormik = withFormik({
+const RegisterFormWithFormik = withFormik({
   mapPropsToValues,
   validationSchema,
   handleSubmit
-})(LoginForm);
+})(RegisterForm);
 
-export default LoginFormWithFormik;
+export default RegisterFormWithFormik;

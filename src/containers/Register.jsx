@@ -2,26 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { LoginForm, GameTitle } from '../components';
+import { RegisterForm, GameTitle } from '../components';
 import { AuthCardContainer, BottomMessage } from '../styles/AuthCard';
 
-const Login = ({ history }) => {
+const Register = ({ history }) => {
   return (
     <AuthCardContainer>
       <GameTitle />
-      <LoginForm history={history} />
+      <RegisterForm history={history} />
       <BottomMessage>
-        Dont have an account?
-        <Link to="/register"> Sign up</Link>
+        Already have an account?
+        <Link to="/login"> Log in</Link>
       </BottomMessage>
     </AuthCardContainer>
   );
 };
 
-Login.propTypes = {
+Register.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired
 };
 
-export default Login;
+export default Register;

@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Login, NoMatch } from './containers';
+import { Home, Login, NoMatch, Register } from './containers';
+
 import { PrivateRoute } from './components';
 import GlobalStyle from './styles';
-import authContext from './contexts/authContext';
 
 function App() {
   // const [auth, setAuth] = useState({});
   return (
-    <authContext.Provider value={{}}>
+    <>
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
         <Route path="*" component={NoMatch} />
       </Switch>
-    </authContext.Provider>
+    </>
   );
 }
 
