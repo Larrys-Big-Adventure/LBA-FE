@@ -50,8 +50,13 @@ const mapPropsToValues = ({ username, password }) => {
   };
 };
 const validationSchema = Yup.object().shape({
-  username: Yup.string().required(),
-  password: Yup.string().required()
+  username: Yup.string()
+    .label('Email')
+    .email()
+    .required(),
+  password: Yup.string()
+    .label('Password')
+    .required()
 });
 const handleSubmit = (values, { props, resetForm }) => {
   axiosWithAuth()
