@@ -19,16 +19,16 @@ const LoginForm = ({ errors, touched }) => {
         component="input"
         type="text"
         name="username"
-        placeholder="johnd0e123"
+        placeholder="Username"
       />
       {touched.username && errors.username && (
         <ErrorMessage>{errors.username}</ErrorMessage>
       )}
       <AuthInput
         component="input"
-        type="text"
+        type="password"
         name="password"
-        placeholder="password"
+        placeholder="Password"
       />
       {touched.password && errors.password && (
         <ErrorMessage>{errors.password}</ErrorMessage>

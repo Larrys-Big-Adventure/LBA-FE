@@ -19,7 +19,7 @@ const RegisterForm = ({ errors, touched }) => {
         component="input"
         type="text"
         name="username"
-        placeholder="Email"
+        placeholder="Username"
       />
       {touched.username && errors.username && (
         <ErrorMessage>{errors.username}</ErrorMessage>
