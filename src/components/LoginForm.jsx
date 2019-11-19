@@ -51,8 +51,7 @@ const mapPropsToValues = ({ username, password }) => {
 };
 const validationSchema = Yup.object().shape({
   username: Yup.string()
-    .label('Email')
-    .email()
+    .label('Username')
     .required(),
   password: Yup.string()
     .label('Password')
