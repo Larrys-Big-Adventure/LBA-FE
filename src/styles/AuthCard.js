@@ -13,6 +13,8 @@ const AuthCardContainer = styled.div`
   border: 2px solid black;
 `;
 
+const AuthTitle = styled.h2``;
+
 const AuthInput = styled(Field)`
   padding: 12px;
   border: 1px solid #3d3d3d;
@@ -43,10 +45,11 @@ const ErrorMessage = styled.p`
   color: red;
 `;
 export {
-  AuthCardContainer,
-  AuthInput,
   AuthForm,
+  AuthInput,
+  AuthTitle,
   AuthButton,
+  ErrorMessage,
   BottomMessage,
-  ErrorMessage
+  AuthCardContainer
 };
