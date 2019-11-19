@@ -9,7 +9,7 @@ afterEach(cleanup);
 
 describe('Login', () => {
   it('renders without crashing', () => {
-    render(<Login />);
+    render(<Login history={{ push: () => {} }} />);
   });
 
   // it('matches previous snapshot', () => {
