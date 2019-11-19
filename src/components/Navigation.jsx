@@ -1,36 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 
-class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  logOut = () => {
+const Navigation = props => {
+  const logOut = () => {
     window.localStorage.clear();
-    this.props.history.push('/');
+    props.history.push('/');
   };
-  render() {
-    return (
-      <nav>
-        <div>
-          <div>
-            <h1>Title</h1>
-          </div>
-          <div>
-            {localStorage.token ? (
-              <button>Log Out</button>
-            ) : (
-              <NavLink className="decoration" to="/login">
-                Login
-              </NavLink>
-            )}
-          </div>
-        </div>
-      </nav>
-    );
-  }
-}
 
-export default Navigation;
+  return (
+    <nav>
+      <div>
+        <div>
+          <h1>Title</h1>
+        </div>
+        <div>
+          {localStorage.token ? (
+            <button onClick={logOut}>Log Out</button>
+          ) : (
+            <NavLink className="decoration" to="/login">
+              Login
+            </NavLink>
+          )}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default withRouter(Navigation);
