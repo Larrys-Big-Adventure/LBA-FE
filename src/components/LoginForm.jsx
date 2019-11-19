@@ -1,11 +1,18 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import * as Yup from 'yup';
+import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
 
 import axiosWithAuth from '../utils/axiosWithAuth';
-import { AuthForm, AuthInput, AuthButton } from '../styles/AuthCard';
+import {
+  AuthForm,
+  AuthInput,
+  AuthButton,
+  ErrorMessage
+} from '../styles/AuthCard';
 
-const LoginForm = () => {
+const LoginForm = ({ errors, touched }) => {
   return (
     <AuthForm action="">
       <AuthInput
@@ -14,16 +21,28 @@ const LoginForm = () => {
         name="username"
         placeholder="johnd0e123"
       />
+      {touched.username && errors.username && (
+        <ErrorMessage>{errors.username}</ErrorMessage>
+      )}
       <AuthInput
         component="input"
         type="text"
         name="password"
         placeholder="password"
       />
+      {touched.password && errors.password && (
+        <ErrorMessage>{errors.password}</ErrorMessage>
+      )}
       <AuthButton type="submit">Submit</AuthButton>
     </AuthForm>
   );
 };
+
+LoginForm.propTypes = {
+  touched: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
 const mapPropsToValues = ({ username, password }) => {
   return {
     username: username || '',
