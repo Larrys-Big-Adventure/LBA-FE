@@ -3,8 +3,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
-
-import axiosWithAuth from '../utils/axiosWithAuth';
+import axios from 'axios';
 import {
   AuthForm,
   AuthInput,
@@ -58,8 +57,8 @@ const validationSchema = Yup.object().shape({
     .required()
 });
 const handleSubmit = (values, { props, resetForm }) => {
-  axiosWithAuth()
-    .post('api/login/', values)
+  axios
+    .post('https://larrys-leisurely-adventure.herokuapp.com/api/login/', values)
     .then(res => {
       localStorage.setItem('token', res.data.key);
       props.history.push('/');
