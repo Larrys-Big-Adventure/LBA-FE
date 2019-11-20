@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class Controller extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,14 @@ class Controller extends Component {
       <div>
         <div>
           <div>
-            <h5>W-A-S-D</h5>
+            <div>
+              <h5>W</h5>
+            </div>
+            <div>
+              <div>A</div>
+              <div>S</div>
+              <div>D</div>
+            </div>
           </div>
           <div>
             <h5>I-G-P-Y</h5>
