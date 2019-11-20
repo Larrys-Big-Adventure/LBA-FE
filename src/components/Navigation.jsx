@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { NavLink, withRouter } from 'react-router-dom';
 
+import { NavContainer, NavButton, TitleDiv } from '../styles/Nav';
+
 const Navigation = ({ history }) => {
+
   const logOut = () => {
     window.localStorage.clear();
     history.push('/');
@@ -11,46 +14,22 @@ const Navigation = ({ history }) => {
 
   return (
     <NavContainer>
-      <Nav>
-        <NavTop>
-          <NavTitle>Title</NavTitle>
-        </NavTop>
-        <NavBot>
-          {localStorage.token ? (
-            <NavButton type="button" onClick={logOut}>
-              Log Out
-            </NavButton>
-          ) : (
-            <NavLink className="decoration" to="/login">
-              Login
-            </NavLink>
-          )}
-        </NavBot>
-      </Nav>
+      <TitleDiv>
+        <h1>LLA</h1>
+      </TitleDiv>
+      <div>
+        {localStorage.token ? (
+          <NavButton onClick={logOut}>Log Out</NavButton>
+        ) : (
+          <NavLink className="decoration" to="/login">
+            Login
+          </NavLink>
+        )}
+      </div>
     </NavContainer>
   );
 };
 
-const NavContainer = styled.div`
-  border-bottom: 1px solid black;
-  padding: 10px 0;
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  margin-left: 3%;
-  margin-right: 3%;
-  justify-content: space-between;
-  align-items: baseline;
-`;
-
-const NavTitle = styled.h1``;
-
-const NavTop = styled.div``;
-
-const NavBot = styled.div``;
-
-const NavButton = styled.button``;
 
 Navigation.propTypes = {
   history: PropTypes.shape({

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 class ActionView extends Component {
-  state = {};
+  state = {
+    roomInfo: []
+  };
 
   render() {
     return (
@@ -10,6 +12,7 @@ class ActionView extends Component {
         <li>look at this content</li>
         <li>look at this content</li>
         <li>look at this content</li>
+        <input></input>
       </div>
     );
   }
