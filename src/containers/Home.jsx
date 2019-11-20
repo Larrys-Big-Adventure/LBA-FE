@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 import axiosWithAuth from '../utils/axiosWithAuth';
 import { Navigation, GameView, Controller, ActionView } from '../components';
@@ -37,6 +38,15 @@ const Home = () => {
     // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    axiosWithAuth()
+      .get('api/adv/rooms/')
+      .then(res => {
+        console.log(JSON.parse(res.data.rooms));
+      })
+      .catch();
+  }, []);
+
   // move
   const moveDirection = direction => {
     axiosWithAuth()
@@ -59,17 +69,20 @@ const Home = () => {
       });
   };
 
-  console.log(state.title);
-  console.log(state.description);
   return (
-    <div>
+    <HomeContainer>
       <Navigation />
       <GameView />
       <ActionView />
       <Controller moveDirection={moveDirection} />
-    </div>
+    </HomeContainer>
   );
 };
+
+const HomeContainer = styled.div`
+  width: 100%;
+  border: 1px solid red;
+`;
 
 export default Home;
 
