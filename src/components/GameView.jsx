@@ -8,7 +8,8 @@ class GameView extends Component {
   render() {
     return (
       <div>
-        <div>Enjoy</div>
+        {/* giant border around taking up most of the screen */}
+        <h1>Enjoy</h1>
       </div>
     );
   }

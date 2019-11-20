@@ -24,6 +24,10 @@ class Controller extends Component {
           </div>
           <div>
             <p> Instructions </p>
+            <li>instructions</li>
+            <li>instructions</li>
+            <li>instructions</li>
+            <li>instructions</li>
           </div>
         </div>
       </div>
