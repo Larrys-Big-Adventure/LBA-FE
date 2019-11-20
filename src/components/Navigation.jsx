@@ -1,12 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { NavLink, withRouter } from 'react-router-dom';
 
 import { NavContainer, NavButton, TitleDiv } from '../styles/Nav';
 
-const Navigation = props => {
+const Navigation = ({ history }) => {
+
   const logOut = () => {
     window.localStorage.clear();
-    props.history.push('/');
+    history.push('/');
   };
 
   return (
@@ -25,6 +28,13 @@ const Navigation = props => {
       </div>
     </NavContainer>
   );
+};
+
+
+Navigation.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
 };
 
 export default withRouter(Navigation);
