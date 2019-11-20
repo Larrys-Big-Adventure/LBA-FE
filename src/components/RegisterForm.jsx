@@ -1,10 +1,10 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import * as Yup from 'yup';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
 
-import axiosWithAuth from '../utils/axiosWithAuth';
 import {
   AuthForm,
   AuthInput,
@@ -19,7 +19,7 @@ const RegisterForm = ({ errors, touched }) => {
         component="input"
         type="text"
         name="username"
-        placeholder="Email"
+        placeholder="Username"
       />
       {touched.username && errors.username && (
         <ErrorMessage>{errors.username}</ErrorMessage>
@@ -64,6 +64,10 @@ const validationSchema = Yup.object().shape({
   username: Yup.string().required(),
   password1: Yup.string()
     .label('Password')
+    // .matches(
+    //   /^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+    //   'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character'
+    // )
     .required(),
   password2: Yup.string()
     .oneOf([Yup.ref('password1'), null], "Password don't match")
@@ -71,8 +75,11 @@ const validationSchema = Yup.object().shape({
 });
 
 const handleSubmit = (values, { props, resetForm }) => {
-  axiosWithAuth()
-    .post('api/registration/', values)
+  axios
+    .post(
+      'https://larrys-leisurely-adventure.herokuapp.com/api/registration/',
+      values
+    )
     .then(res => {
       localStorage.setItem('token', res.data.key);
       props.history.push('/');

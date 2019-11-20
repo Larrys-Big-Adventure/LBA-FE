@@ -3,8 +3,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
-
-import axiosWithAuth from '../utils/axiosWithAuth';
+import axios from 'axios';
 import {
   AuthForm,
   AuthInput,
@@ -19,7 +18,7 @@ const LoginForm = ({ errors, touched }) => {
         component="input"
         type="text"
         name="username"
-        placeholder="johnd0e123"
+        placeholder="Username"
       />
       {touched.username && errors.username && (
         <ErrorMessage>{errors.username}</ErrorMessage>
@@ -28,7 +27,7 @@ const LoginForm = ({ errors, touched }) => {
         component="input"
         type="password"
         name="password"
-        placeholder="password"
+        placeholder="Password"
       />
       {touched.password && errors.password && (
         <ErrorMessage>{errors.password}</ErrorMessage>
@@ -58,8 +57,8 @@ const validationSchema = Yup.object().shape({
     .required()
 });
 const handleSubmit = (values, { props, resetForm }) => {
-  axiosWithAuth()
-    .post('api/login/', values)
+  axios
+    .post('https://larrys-leisurely-adventure.herokuapp.com/api/login/', values)
     .then(res => {
       localStorage.setItem('token', res.data.key);
       props.history.push('/');

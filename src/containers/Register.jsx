@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { RegisterForm, GameTitle } from '../components';
-import { AuthCardContainer, BottomMessage } from '../styles/AuthCard';
+import {
+  AuthTitle,
+  BottomMessage,
+  AuthCardContainer
+} from '../styles/AuthCard';
 
 const Register = ({ history }) => {
   return (
     <AuthCardContainer>
       <GameTitle />
+      <AuthTitle>Sign up</AuthTitle>
       <RegisterForm history={history} />
       <BottomMessage>
         Already have an account?
