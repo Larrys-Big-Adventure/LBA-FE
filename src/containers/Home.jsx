@@ -1,12 +1,13 @@
 import React from 'react';
-import { Navigation } from '../components';
+import { Navigation, GameView, Controller, ActionView } from '../components';
 
 const Home = () => {
   return (
     <div>
       <Navigation />
-
-      <h1>Home here</h1>
+      <GameView />
+      <ActionView />
+      <Controller />
     </div>
   );
 };
