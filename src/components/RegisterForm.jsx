@@ -76,10 +76,7 @@ const validationSchema = Yup.object().shape({
 
 const handleSubmit = (values, { props, resetForm }) => {
   axios
-    .post(
-      'https://larrys-leisurely-adventure.herokuapp.com/api/registration/',
-      values
-    )
+    .post(`${process.env.REACT_APP_BASE_URL}api/registration/`, values)
     .then(res => {
       localStorage.setItem('token', res.data.key);
       props.history.push('/');
