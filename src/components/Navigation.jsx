@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 
+import { NavContainer, NavButton, TitleDiv } from '../styles/Nav';
+
 const Navigation = props => {
   const logOut = () => {
     window.localStorage.clear();
@@ -8,22 +10,20 @@ const Navigation = props => {
   };
 
   return (
-    <nav>
+    <NavContainer>
+      <TitleDiv>
+        <h1>LLA</h1>
+      </TitleDiv>
       <div>
-        <div>
-          <h1>Title</h1>
-        </div>
-        <div>
-          {localStorage.token ? (
-            <button onClick={logOut}>Log Out</button>
-          ) : (
-            <NavLink className="decoration" to="/login">
-              Login
-            </NavLink>
-          )}
-        </div>
+        {localStorage.token ? (
+          <NavButton onClick={logOut}>Log Out</NavButton>
+        ) : (
+          <NavLink className="decoration" to="/login">
+            Login
+          </NavLink>
+        )}
       </div>
-    </nav>
+    </NavContainer>
   );
 };
 
