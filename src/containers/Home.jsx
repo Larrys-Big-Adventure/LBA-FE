@@ -38,15 +38,6 @@ const Home = () => {
     // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    axiosWithAuth()
-      .get('api/adv/rooms/')
-      .then(res => {
-        console.log(JSON.parse(res.data.rooms));
-      })
-      .catch();
-  }, []);
-
   // move
   const moveDirection = direction => {
     axiosWithAuth()
