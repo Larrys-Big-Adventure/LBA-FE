@@ -7,8 +7,25 @@ import {
 } from '../styles/ActionView';
 
 class ActionView extends Component {
-  state = {
-    roomInfo: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      actions: [],
+      userInput: ''
+    };
+  }
+
+  handleInputChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  submit = event => {
+    event.preventDefault();
+    this.setState({
+      actions: [...this.state.actions, this.state.userInput]
+    });
   };
 
   render() {
@@ -26,7 +43,13 @@ class ActionView extends Component {
           <ListItem>new new new new new</ListItem>
         </TextContainer>
 
-        <InputField type="text" placeholder="user input field"></InputField>
+        <InputField
+          type="text"
+          placeholder="user input field"
+          name="userInput"
+          onChange={this.handleInputChange}
+          onSubmit={this.submit}
+        />
       </ActionViewContainer>
     );
   }
