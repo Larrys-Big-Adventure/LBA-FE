@@ -54,6 +54,7 @@ const ModalContainer = styled.div`
   max-height: 300px;
   margin-left: 30px;
   position: absolute;
+  border: 2px solid black;
   background-color: white;
   animation-name: floating;
   animation-duration: 3s;

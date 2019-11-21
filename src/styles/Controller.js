@@ -16,6 +16,7 @@ const BotRow = styled.div`
   justify-content: space-evenly;
 `;
 const Button = styled.button`
+  cursor: pointer;
   outline: none;
   padding: 25px;
   border: 1px solid black;
@@ -27,6 +28,9 @@ const Button = styled.button`
   :active {
     transform: translateY(1px);
     filter: saturate(150%);
+  }
+  :hover {
+    background-color: #a1a1a1;
   }
 `;
 

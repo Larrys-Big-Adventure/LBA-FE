@@ -6,7 +6,6 @@ const View = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
-  background-color: black;
   min-height: calc(100% - 450px);
 `;
 

@@ -11,7 +11,13 @@ import {
 } from '../styles/Controller';
 import Instructions from './Instructions';
 
-const Controller = ({ moveDirection, moveHandler }) => {
+const Controller = ({
+  moveDirection,
+  moveHandler,
+  setLootModalOpen,
+  setInventoryModalOpen,
+  setPlayersModalOpen
+}) => {
   return (
     <ControllersContainer onKeyPress={moveHandler} tabIndex="0">
       <Controllers>
@@ -35,9 +41,15 @@ const Controller = ({ moveDirection, moveHandler }) => {
         </WASDContainer>
         <Instructions />
         <HotKeyContainer>
-          <Button type="button">L</Button>
-          <Button type="button">I</Button>
-          <Button type="button">P</Button>
+          <Button type="button" onClick={setLootModalOpen}>
+            L
+          </Button>
+          <Button type="button" onClick={setInventoryModalOpen}>
+            I
+          </Button>
+          <Button type="button" onClick={setPlayersModalOpen}>
+            P
+          </Button>
         </HotKeyContainer>
       </Controllers>
     </ControllersContainer>
@@ -46,7 +58,10 @@ const Controller = ({ moveDirection, moveHandler }) => {
 
 Controller.propTypes = {
   moveDirection: PropTypes.func.isRequired,
-  moveHandler: PropTypes.func.isRequired
+  moveHandler: PropTypes.func.isRequired,
+  setPlayersModalOpen: PropTypes.func.isRequired,
+  setInventoryModalOpen: PropTypes.func.isRequired,
+  setLootModalOpen: PropTypes.func.isRequired
 };
 
 export default Controller;

@@ -65,6 +65,32 @@ const Home = () => {
       });
   };
 
+  const setLootModalOpen = () => {
+    setState({
+      ...state,
+      isInventoryModalOpen: false,
+      isLootModalOpen: !state.isLootModalOpen,
+      isPlayersModalOpen: false
+    });
+  };
+  const setInventoryModalOpen = () => {
+    setState({
+      ...state,
+      isInventoryModalOpen: !state.isInventoryModalOpen,
+      isLootModalOpen: false,
+      isPlayersModalOpen: false
+    });
+  };
+  const setPlayersModalOpen = () => {
+    setState({
+      ...state,
+      isInventoryModalOpen: false,
+      isLootModalOpen: false,
+      isPlayersModalOpen: !state.isPlayersModalOpen
+    });
+  };
+
+  // keyboard controls
   const moveHandler = e => {
     if (e.key === 'w') {
       moveDirection('n');
@@ -75,26 +101,11 @@ const Home = () => {
     } else if (e.key === 'd') {
       moveDirection('e');
     } else if (e.key === 'l') {
-      setState({
-        ...state,
-        isInventoryModalOpen: false,
-        isLootModalOpen: !state.isLootModalOpen,
-        isPlayersModalOpen: false
-      });
+      setLootModalOpen();
     } else if (e.key === 'i') {
-      setState({
-        ...state,
-        isInventoryModalOpen: !state.isInventoryModalOpen,
-        isLootModalOpen: false,
-        isPlayersModalOpen: false
-      });
+      setInventoryModalOpen();
     } else if (e.key === 'p') {
-      setState({
-        ...state,
-        isInventoryModalOpen: false,
-        isLootModalOpen: false,
-        isPlayersModalOpen: !state.isPlayersModalOpen
-      });
+      setPlayersModalOpen();
     }
   };
 
@@ -105,17 +116,25 @@ const Home = () => {
       <Navigation />
       <GameView
         loot={state.loot}
-        players={state.players}
         moveHandler={moveHandler}
+        players={state.players}
         inventory={state.inventory}
         moveDirection={moveDirection}
         isLootModalOpen={state.isLootModalOpen}
         isPlayersModalOpen={state.isPlayersModalOpen}
         isInventoryModalOpen={state.isInventoryModalOpen}
+        title={state.title}
+        description={state.description}
       />
       <BottomSection>
         <ActionView />
-        <Controller moveDirection={moveDirection} moveHandler={moveHandler} />
+        <Controller
+          moveDirection={moveDirection}
+          moveHandler={moveHandler}
+          setLootModalOpen={setLootModalOpen}
+          setInventoryModalOpen={setInventoryModalOpen}
+          setPlayersModalOpen={setPlayersModalOpen}
+        />
       </BottomSection>
     </HomeContainer>
   );
