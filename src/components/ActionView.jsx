@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import {
+  ListItem,
+  ActionViewContainer,
+  InputField,
+  TextContainer
+} from '../styles/ActionView';
+
 class ActionView extends Component {
   state = {
     roomInfo: []
@@ -6,16 +13,21 @@ class ActionView extends Component {
 
   render() {
     return (
-      <div>
-        <li>look at this content</li>
-        <li>look at this content</li>
-        <li>look at this content</li>
-        <li>look at this content</li>
-        <li>look at this content</li>
-        <input></input>
-      </div>
+      <ActionViewContainer>
+        <TextContainer>
+          <li>look at this content</li>
+          <li>look at this content</li>
+          <li>look at this content</li>
+          <li>look at this content</li>
+          <li>look at this content</li>
+        </TextContainer>
+
+        <InputField></InputField>
+      </ActionViewContainer>
     );
   }
 }
 
 export default ActionView;
+
+// loop to print updated list
