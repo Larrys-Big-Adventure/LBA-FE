@@ -5,12 +5,13 @@ import {
   WASDContainer,
   TopRow,
   BotRow,
-  Button
+  Button,
+  HotKeyContainer
 } from '../styles/Controller';
 
-const Controller = ({ moveDirection }) => {
+const Controller = ({ moveDirection, moveHandler }) => {
   return (
-    <ControllersContainer>
+    <ControllersContainer onKeyPress={moveHandler} tabIndex="0">
       <WASDContainer>
         <TopRow>
           <Button type="button" onClick={() => moveDirection('n')}>
@@ -29,12 +30,18 @@ const Controller = ({ moveDirection }) => {
           </Button>
         </BotRow>
       </WASDContainer>
+      <HotKeyContainer>
+        <Button type="button">U</Button>
+        <Button type="button">I</Button>
+        <Button type="button">P</Button>
+      </HotKeyContainer>
     </ControllersContainer>
   );
 };
 
 Controller.propTypes = {
-  moveDirection: PropTypes.func.isRequired
+  moveDirection: PropTypes.func.isRequired,
+  moveHandler: PropTypes.func.isRequired
 };
 
 export default Controller;

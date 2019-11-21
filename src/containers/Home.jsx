@@ -8,11 +8,13 @@ const Home = () => {
   const [state, setState] = useState({
     id: null,
     name: '',
+    loot: [],
+    error: '',
     title: '',
-    description: '',
     players: [],
+    inventory: [],
     error_msg: '',
-    error: ''
+    description: ''
   });
 
   // init
@@ -25,8 +27,8 @@ const Home = () => {
           id: res.data.uuid,
           name: res.data.name,
           title: res.data.title,
-          description: res.data.description,
-          players: res.data.players
+          players: res.data.players,
+          description: res.data.description
         });
       })
       .catch(() => {
@@ -47,9 +49,9 @@ const Home = () => {
           ...state,
           name: res.data.name,
           title: res.data.title,
-          description: res.data.description,
           players: res.data.players,
-          error_msg: res.data.error_msg
+          error_msg: res.data.error_msg,
+          description: res.data.description
         });
       })
       .catch(() => {
@@ -60,14 +62,32 @@ const Home = () => {
       });
   };
 
+  const moveHandler = e => {
+    if (e.key === 'w') {
+      moveDirection('n');
+    } else if (e.key === 'a') {
+      moveDirection('w');
+    } else if (e.key === 's') {
+      moveDirection('s');
+    } else if (e.key === 'd') {
+      moveDirection('e');
+    } else if (e.key === 'u') {
+      console.log(e.key);
+    } else if (e.key === 'i') {
+      console.log(e.key);
+    } else if (e.key === 'p') {
+      console.log(e.key);
+    }
+  };
+
   console.log(state.title);
   console.log(state.description);
   return (
     <HomeContainer>
       <Navigation />
-      <GameView moveDirection={moveDirection} />
+      <GameView moveDirection={moveDirection} moveHandler={moveHandler} />
       <ActionView />
-      <Controller moveDirection={moveDirection} />
+      <Controller moveDirection={moveDirection} moveHandler={moveHandler} />
     </HomeContainer>
   );
 };

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 const ControllersContainer = styled.div`
-  margin: 0 3%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;
 const WASDContainer = styled.div`
   width: 212px;
@@ -30,4 +32,17 @@ const Button = styled.button`
   }
 `;
 
-export { ControllersContainer, WASDContainer, TopRow, BotRow, Button };
+const HotKeyContainer = styled.div`
+  button {
+    margin: 0 10px;
+  }
+`;
+
+export {
+  TopRow,
+  BotRow,
+  Button,
+  WASDContainer,
+  HotKeyContainer,
+  ControllersContainer
+};
