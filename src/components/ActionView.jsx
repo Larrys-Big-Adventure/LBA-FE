@@ -3,7 +3,10 @@ import {
   ListItem,
   ActionViewContainer,
   InputField,
-  TextContainer
+  TextContainer,
+  SendButton,
+  UserInputContainer,
+  Form
 } from '../styles/ActionView';
 
 class ActionView extends Component {
@@ -44,17 +47,19 @@ class ActionView extends Component {
         <TextContainer>
           {this.state.actions.map(this.renderAction)}
         </TextContainer>
-        <form onSubmit={this.submit}>
-          <InputField
-            type="text"
-            name="userInput"
-            id="userinput"
-            placeholder="user input field"
-            onChange={this.handleInputChange}
-            value={this.state.userInput}
-          />
-          <button type="submit">Send</button>
-        </form>
+        <UserInputContainer>
+          <Form onSubmit={this.submit}>
+            <InputField
+              type="text"
+              name="userInput"
+              id="userinput"
+              placeholder="user input field"
+              onChange={this.handleInputChange}
+              value={this.state.userInput}
+            />
+            <SendButton type="submit">Send</SendButton>
+          </Form>
+        </UserInputContainer>
       </ActionViewContainer>
     );
   }

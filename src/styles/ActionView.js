@@ -18,10 +18,10 @@ const ActionViewContainer = styled.div`
 const InputField = styled.input`
   border: 2px solid red;
   border-style: outset;
-  margin-top: 7px;
-  width: 100%;
+  //margin-top: 7px;
+  width: 95%;
   outline: none;
-  padding-top: 10px;
+  padding-top: 17px;
   padding-bottom: 10px;
   font-weight: bold;
   font-family: monospace;
@@ -39,4 +39,30 @@ const TextContainer = styled.div`
   -ms-overflow-style: none;
 `;
 
-export { ListItem, ActionViewContainer, InputField, TextContainer };
+const SendButton = styled.button`
+  border: 2px solid black;
+  width: 5%;
+`;
+
+const UserInputContainer = styled.div`
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export {
+  ListItem,
+  ActionViewContainer,
+  InputField,
+  TextContainer,
+  SendButton,
+  UserInputContainer,
+  Form
+};
