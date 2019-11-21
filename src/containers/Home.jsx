@@ -60,6 +60,8 @@ const Home = () => {
       });
   };
 
+  console.log(state.title);
+  console.log(state.description);
   return (
     <HomeContainer>
       <Navigation />
