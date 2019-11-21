@@ -7,8 +7,18 @@ import {
 } from '../styles/ActionView';
 
 class ActionView extends Component {
-  state = {
-    roomInfo: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      actions: [],
+      userInput: ''
+    };
+  }
+
+  handleInputChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
 
   render() {
