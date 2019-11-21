@@ -16,6 +16,7 @@ const BotRow = styled.div`
   justify-content: space-evenly;
 `;
 const Button = styled.button`
+  outline: none;
   padding: 25px;
   border: 1px solid black;
   border-right: 15px solid black;

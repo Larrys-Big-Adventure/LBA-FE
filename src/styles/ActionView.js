@@ -21,6 +21,7 @@ const InputField = styled.input`
 
 const TextContainer = styled.div`
   border: 2px solid green;
+  overflow: auto;
 `;
 
 export { ListItem, ActionViewContainer, InputField, TextContainer };
