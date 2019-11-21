@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import Modal from './Modal';
 import { View } from '../styles/GameView';
@@ -16,9 +15,9 @@ const GameView = ({
 }) => {
   return (
     <View onKeyPress={moveHandler} tabIndex="0">
-      <Modal arr={loot} title="loot" bool={isLootModalOpen} />
-      <Modal arr={players} title="players" bool={isPlayersModalOpen} />
-      <Modal arr={inventory} title="inventory" bool={isInventoryModalOpen} />
+      <Modal arr={loot} title="Loot" bool={isLootModalOpen} />
+      <Modal arr={players} title="Players" bool={isPlayersModalOpen} />
+      <Modal arr={inventory} title="Inventory" bool={isInventoryModalOpen} />
 
       {/* giant border around taking up most of the screen */}
       <h1>Enjoy</h1>
@@ -27,7 +26,13 @@ const GameView = ({
 };
 
 GameView.propTypes = {
-  moveHandler: PropTypes.func.isRequired
+  moveHandler: PropTypes.func.isRequired,
+  loot: PropTypes.arrayOf(PropTypes.string).isRequired,
+  players: PropTypes.arrayOf(PropTypes.string).isRequired,
+  inventory: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isLootModalOpen: PropTypes.bool.isRequired,
+  isPlayersModalOpen: PropTypes.bool.isRequired,
+  isInventoryModalOpen: PropTypes.bool.isRequired
 };
 
 export default GameView;
