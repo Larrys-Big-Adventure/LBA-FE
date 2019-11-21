@@ -21,7 +21,7 @@ const Navigation = ({ history }) => {
     <NavContainer>
       <Nav>
         <TitleDiv>
-          <NavTitle>LLA</NavTitle>
+          <NavTitle>Larrys Leisurely Adventure</NavTitle>
         </TitleDiv>
         <NavButtonContainer>
           <NavButton onClick={logOut}>Log Out</NavButton>
