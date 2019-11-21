@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <Navigation />
-      <GameView />
+      <GameView moveDirection={moveDirection} />
       <ActionView />
       <Controller moveDirection={moveDirection} />
     </HomeContainer>
