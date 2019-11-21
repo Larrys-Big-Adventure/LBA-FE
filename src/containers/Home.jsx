@@ -113,14 +113,29 @@ const Home = () => {
         isLootModalOpen={state.isLootModalOpen}
         isPlayersModalOpen={state.isPlayersModalOpen}
       />
-      <ActionView />
-      <Controller moveDirection={moveDirection} moveHandler={moveHandler} />
+      <BottomSection>
+        <ActionView />
+        <Controller moveDirection={moveDirection} moveHandler={moveHandler} />
+      </BottomSection>
     </HomeContainer>
   );
 };
 
 const HomeContainer = styled.div`
   width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const BottomSection = styled.div`
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 0;
 `;
 
 export default Home;
