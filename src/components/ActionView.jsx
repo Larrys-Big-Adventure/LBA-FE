@@ -23,33 +23,38 @@ class ActionView extends Component {
 
   submit = event => {
     event.preventDefault();
+    const newAction = {
+      id: Date.now(),
+      action: this.state.userInput
+    };
     this.setState({
-      actions: [...this.state.actions, this.state.userInput]
+      actions: [...this.state.actions, newAction],
+      userInput: ''
     });
+  };
+
+  renderAction = item => {
+    console.log(item);
+    return <ListItem key={item.id}>{item.action}</ListItem>;
   };
 
   render() {
     return (
       <ActionViewContainer>
         <TextContainer>
-          <ListItem>look at this content</ListItem>
-          <ListItem>look at this content</ListItem>
-          <ListItem>look at this content</ListItem>
-          <ListItem>look at this content</ListItem>
-          <ListItem>look at this content</ListItem>
-          <ListItem>look at this content</ListItem>
-          <ListItem>look at this content</ListItem>
-          <ListItem>look at this content</ListItem>
-          <ListItem>new new new new new</ListItem>
+          {this.state.actions.map(this.renderAction)}
         </TextContainer>
-
-        <InputField
-          type="text"
-          placeholder="user input field"
-          name="userInput"
-          onChange={this.handleInputChange}
-          onSubmit={this.submit}
-        />
+        <form onSubmit={this.submit}>
+          <InputField
+            type="text"
+            name="userInput"
+            id="userinput"
+            placeholder="user input field"
+            onChange={this.handleInputChange}
+            value={this.state.userInput}
+          />
+          <button type="submit">Send</button>
+        </form>
       </ActionViewContainer>
     );
   }
