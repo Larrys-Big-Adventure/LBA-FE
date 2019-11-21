@@ -43,23 +43,23 @@ const ItemContainer = styled.div`
 `;
 
 const ModalContainer = styled.div`
-  display: ${({ bool }) => (!bool ? 'none' : 'block')};
-  overflow: auto;
-  max-height: 300px;
-  max-width: 300px;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: white;
-  z-index: 10;
   top: 0;
   right: 3%;
+  width: 100%;
+  z-index: 10;
+  height: 100%;
+  overflow: auto;
+  margin-top: 5px;
+  max-width: 300px;
+  max-height: 300px;
+  margin-left: 30px;
+  position: absolute;
+  background-color: white;
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  margin-left: 30px;
-  margin-top: 5px;
+  display: ${({ bool }) => (!bool ? 'none' : 'block')};
 
   @keyframes floating {
     from {

@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 const ControllersContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  width: 100%;
 `;
 const WASDContainer = styled.div`
   width: 212px;
@@ -32,9 +30,18 @@ const Button = styled.button`
   }
 `;
 
+const Controllers = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-around;
+`;
+
 const HotKeyContainer = styled.div`
   button {
-    margin: 0 10px;
+    margin: 0 0;
   }
 `;
 
@@ -42,6 +49,7 @@ export {
   TopRow,
   BotRow,
   Button,
+  Controllers,
   WASDContainer,
   HotKeyContainer,
   ControllersContainer

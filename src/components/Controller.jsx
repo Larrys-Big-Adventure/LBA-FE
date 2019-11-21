@@ -6,35 +6,40 @@ import {
   TopRow,
   BotRow,
   Button,
+  Controllers,
   HotKeyContainer
 } from '../styles/Controller';
+import Instructions from './Instructions';
 
 const Controller = ({ moveDirection, moveHandler }) => {
   return (
     <ControllersContainer onKeyPress={moveHandler} tabIndex="0">
-      <WASDContainer>
-        <TopRow>
-          <Button type="button" onClick={() => moveDirection('n')}>
-            W
-          </Button>
-        </TopRow>
-        <BotRow>
-          <Button type="button" onClick={() => moveDirection('w')}>
-            A
-          </Button>
-          <Button type="button" onClick={() => moveDirection('s')}>
-            S
-          </Button>
-          <Button type="button" onClick={() => moveDirection('e')}>
-            D
-          </Button>
-        </BotRow>
-      </WASDContainer>
-      <HotKeyContainer>
-        <Button type="button">L</Button>
-        <Button type="button">I</Button>
-        <Button type="button">P</Button>
-      </HotKeyContainer>
+      <Controllers>
+        <WASDContainer>
+          <TopRow>
+            <Button type="button" onClick={() => moveDirection('n')}>
+              W
+            </Button>
+          </TopRow>
+          <BotRow>
+            <Button type="button" onClick={() => moveDirection('w')}>
+              A
+            </Button>
+            <Button type="button" onClick={() => moveDirection('s')}>
+              S
+            </Button>
+            <Button type="button" onClick={() => moveDirection('e')}>
+              D
+            </Button>
+          </BotRow>
+        </WASDContainer>
+        <Instructions />
+        <HotKeyContainer>
+          <Button type="button">L</Button>
+          <Button type="button">I</Button>
+          <Button type="button">P</Button>
+        </HotKeyContainer>
+      </Controllers>
     </ControllersContainer>
   );
 };

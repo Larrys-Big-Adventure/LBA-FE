@@ -104,14 +104,14 @@ const Home = () => {
     <HomeContainer>
       <Navigation />
       <GameView
-        moveDirection={moveDirection}
-        moveHandler={moveHandler}
         loot={state.loot}
         players={state.players}
+        moveHandler={moveHandler}
         inventory={state.inventory}
-        isInventoryModalOpen={state.isInventoryModalOpen}
+        moveDirection={moveDirection}
         isLootModalOpen={state.isLootModalOpen}
         isPlayersModalOpen={state.isPlayersModalOpen}
+        isInventoryModalOpen={state.isInventoryModalOpen}
       />
       <BottomSection>
         <ActionView />
@@ -136,6 +136,7 @@ const BottomSection = styled.div`
   justify-content: flex-end;
   position: relative;
   bottom: 0;
+  margin-bottom: 50px;
 `;
 
 export default Home;
