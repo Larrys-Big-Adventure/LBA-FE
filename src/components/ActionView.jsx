@@ -15,11 +15,15 @@ class ActionView extends Component {
     return (
       <ActionViewContainer>
         <TextContainer>
-          <li>look at this content</li>
-          <li>look at this content</li>
-          <li>look at this content</li>
-          <li>look at this content</li>
-          <li>look at this content</li>
+          <ListItem>look at this content</ListItem>
+          <ListItem>look at this content</ListItem>
+          <ListItem>look at this content</ListItem>
+          <ListItem>look at this content</ListItem>
+          <ListItem>look at this content</ListItem>
+          <ListItem>look at this content</ListItem>
+          <ListItem>look at this content</ListItem>
+          <ListItem>look at this content</ListItem>
+          <ListItem>new new new new new</ListItem>
         </TextContainer>
 
         <InputField></InputField>

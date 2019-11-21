@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const ListItem = styled.li`
-  border: 1px solid black;
+  border: 0.02px solid black;
   width: 100%;
+  font-size: 14px;
 `;
 
 const ActionViewContainer = styled.div`
@@ -22,6 +23,7 @@ const InputField = styled.input`
 const TextContainer = styled.div`
   border: 2px solid green;
   overflow: auto;
+  height: 70px;
 `;
 
 export { ListItem, ActionViewContainer, InputField, TextContainer };
