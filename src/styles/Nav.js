@@ -1,28 +1,28 @@
 import styled from 'styled-components';
 
 const NavContainer = styled.nav`
+  border-bottom: 2px solid black;
+`;
+
+const Nav = styled.nav`
+  margin: 0 3%;
   display: flex;
-  flex-direction: row;
-  justify-conent: space-evenly
-  width: 100%;
-  border: 2px solid black;
-  border-radius: 3px;
-  margin-top: 5px;
-  align-items:
+  justify-content: space-between;
+`;
+
+const NavButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const NavButton = styled.button`
+  width: 100px;
   padding: 15px;
-  margin-top: 10px;
-  width: 50
   cursor: pointer;
   border: 2px solid black;
 `;
 
-const TitleDiv = styled.div`
-  //   border: 2px solid black;
-  margin-left: 25px;
-  width: 92%;
-`;
+const TitleDiv = styled.div``;
 
-export { NavContainer, NavButton, TitleDiv };
+const NavTitle = styled.h1``;
+export { Nav, NavButton, TitleDiv, NavTitle, NavButtonContainer, NavContainer };

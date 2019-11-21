@@ -72,7 +72,6 @@ const Home = () => {
 
 const HomeContainer = styled.div`
   width: 100%;
-  border: 1px solid red;
 `;
 
 export default Home;

@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import {
+  ControllersContainer,
+  WASDContainer,
+  TopRow,
+  BotRow,
+  Button
+} from '../styles/Controller';
 
 const Controller = ({ moveDirection }) => {
   return (
@@ -26,12 +32,6 @@ const Controller = ({ moveDirection }) => {
     </ControllersContainer>
   );
 };
-
-const ControllersContainer = styled.div``;
-const WASDContainer = styled.div``;
-const TopRow = styled.div``;
-const BotRow = styled.div``;
-const Button = styled.button``;
 
 Controller.propTypes = {
   moveDirection: PropTypes.func.isRequired

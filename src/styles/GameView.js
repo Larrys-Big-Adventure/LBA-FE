@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 const View = styled.div`
-  border: 2px solid red;
-  padding: 75px;
-  padding-bottom: 400px;
   width: 100%;
+  padding: 75px;
   display: flex;
+  padding-bottom: 400px;
   justify-content: center;
-  margin-top: 10px;
+  background-color: black;
 `;
 
 export { View };
