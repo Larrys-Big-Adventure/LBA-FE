@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Modal from './Modal';
 import CurrentLocation from './CurrentLocation';
 import { View } from '../styles/GameView';
+import RoomView from './RoomView';
 
 const GameView = ({
   moveHandler,
@@ -26,7 +27,7 @@ const GameView = ({
       </div>
 
       {/* giant border around taking up most of the screen */}
-      <h1>Enjoy</h1>
+      <RoomView />
     </View>
   );
 };

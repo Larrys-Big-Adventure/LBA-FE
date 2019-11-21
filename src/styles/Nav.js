@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const NavContainer = styled.nav`
   border-bottom: 2px solid black;
+  z-index: 99;
+  background-color: white;
 `;
 
 const Nav = styled.nav`

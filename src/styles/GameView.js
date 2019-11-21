@@ -5,6 +5,7 @@ const View = styled.div`
   height: auto;
   display: flex;
   position: relative;
+  align-items: center;
   justify-content: center;
   min-height: calc(100% - 450px);
 `;
