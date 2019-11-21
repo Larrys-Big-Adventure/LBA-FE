@@ -6,6 +6,7 @@ import Navigation from './Navigation';
 import ActionView from './ActionView';
 import Controller from './Controller';
 import GameView from './GameView';
+import Modal from './Modal';
 
 export {
   PrivateRoute,
@@ -15,5 +16,6 @@ export {
   Navigation,
   ActionView,
   Controller,
-  GameView
+  GameView,
+  Modal
 };

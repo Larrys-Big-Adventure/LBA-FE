@@ -8,13 +8,16 @@ const Home = () => {
   const [state, setState] = useState({
     id: null,
     name: '',
-    loot: [],
     error: '',
     title: '',
+    loot: [],
     players: [],
     inventory: [],
     error_msg: '',
-    description: ''
+    description: '',
+    isInventoryModalOpen: false,
+    isLootModalOpen: false,
+    isPlayersModalOpen: false
   });
 
   // init
@@ -71,12 +74,27 @@ const Home = () => {
       moveDirection('s');
     } else if (e.key === 'd') {
       moveDirection('e');
-    } else if (e.key === 'u') {
-      console.log(e.key);
+    } else if (e.key === 'l') {
+      setState({
+        ...state,
+        isInventoryModalOpen: false,
+        isLootModalOpen: !state.isLootModalOpen,
+        isPlayersModalOpen: false
+      });
     } else if (e.key === 'i') {
-      console.log(e.key);
+      setState({
+        ...state,
+        isInventoryModalOpen: !state.isInventoryModalOpen,
+        isLootModalOpen: false,
+        isPlayersModalOpen: false
+      });
     } else if (e.key === 'p') {
-      console.log(e.key);
+      setState({
+        ...state,
+        isInventoryModalOpen: false,
+        isLootModalOpen: false,
+        isPlayersModalOpen: !state.isPlayersModalOpen
+      });
     }
   };
 
@@ -85,7 +103,16 @@ const Home = () => {
   return (
     <HomeContainer>
       <Navigation />
-      <GameView moveDirection={moveDirection} moveHandler={moveHandler} />
+      <GameView
+        moveDirection={moveDirection}
+        moveHandler={moveHandler}
+        loot={state.loot}
+        players={state.players}
+        inventory={state.inventory}
+        isInventoryModalOpen={state.isInventoryModalOpen}
+        isLootModalOpen={state.isLootModalOpen}
+        isPlayersModalOpen={state.isPlayersModalOpen}
+      />
       <ActionView />
       <Controller moveDirection={moveDirection} moveHandler={moveHandler} />
     </HomeContainer>

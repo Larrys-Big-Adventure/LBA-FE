@@ -31,7 +31,7 @@ const Controller = ({ moveDirection, moveHandler }) => {
         </BotRow>
       </WASDContainer>
       <HotKeyContainer>
-        <Button type="button">U</Button>
+        <Button type="button">L</Button>
         <Button type="button">I</Button>
         <Button type="button">P</Button>
       </HotKeyContainer>
