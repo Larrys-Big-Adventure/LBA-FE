@@ -31,6 +31,12 @@ const TextContainer = styled.div`
   border: 2px solid black;
   overflow: auto;
   height: 70px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
 `;
 
 export { ListItem, ActionViewContainer, InputField, TextContainer };

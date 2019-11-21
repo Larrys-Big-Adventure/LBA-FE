@@ -21,6 +21,13 @@ class ActionView extends Component {
     });
   };
 
+  submit = event => {
+    event.preventDefault();
+    this.setState({
+      actions: [...this.state.actions, this.state.userInput]
+    });
+  };
+
   render() {
     return (
       <ActionViewContainer>
@@ -36,7 +43,13 @@ class ActionView extends Component {
           <ListItem>new new new new new</ListItem>
         </TextContainer>
 
-        <InputField type="text" placeholder="user input field"></InputField>
+        <InputField
+          type="text"
+          placeholder="user input field"
+          name="userInput"
+          onChange={this.handleInputChange}
+          onSubmit={this.submit}
+        />
       </ActionViewContainer>
     );
   }
