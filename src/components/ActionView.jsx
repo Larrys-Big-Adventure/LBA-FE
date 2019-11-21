@@ -26,7 +26,7 @@ class ActionView extends Component {
           <ListItem>new new new new new</ListItem>
         </TextContainer>
 
-        <InputField></InputField>
+        <InputField type="text" placeholder="user input field"></InputField>
       </ActionViewContainer>
     );
   }
