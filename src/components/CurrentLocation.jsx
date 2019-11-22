@@ -30,7 +30,6 @@ const Container = styled.div`
   border: 2px solid black;
   border-top-color: white;
   position: absolute;
-  text-align: center;
   padding: 10px 30px;
   top: 0;
   z-index: 99;
