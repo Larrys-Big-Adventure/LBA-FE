@@ -31,6 +31,11 @@ const Container = styled.div`
   height: 100%;
   width: 500px;
   padding: 20px;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  font-family: monospace;
 `;
 
 const ContentContainer = styled.div`

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ListItem = styled.li`
   /* border: 0.02px solid black; */
   width: 100%;
-  font-size: 14px;
+  font-size: 12px;
   font-family: monospace;
   list-style-type: none;
   font-weight: bold;
@@ -16,7 +16,7 @@ const ActionViewContainer = styled.div`
 `;
 
 const InputField = styled.input`
-  border: 2px solid red;
+  border: 2px solid black;
   border-style: outset;
   //margin-top: 7px;
   width: 95%;
@@ -42,10 +42,12 @@ const TextContainer = styled.div`
 const SendButton = styled.button`
   border: 2px solid black;
   width: 5%;
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: bold;
 `;
 
 const UserInputContainer = styled.div`
-  border: 1px solid green;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

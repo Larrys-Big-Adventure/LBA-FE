@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NavContainer = styled.nav`
   border-bottom: 2px solid black;
   z-index: 99;
-  background-color: white;
+  background-color: yellow;
 `;
 
 const Nav = styled.nav`
@@ -22,9 +22,17 @@ const NavButton = styled.button`
   padding: 15px;
   cursor: pointer;
   border: 2px solid black;
+  border-radius: 10px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: yellow;
 `;
 
-const TitleDiv = styled.div``;
+const TitleDiv = styled.div`
+  font-family: monospace;
+  font-weight: bold;
+`;
 
 const NavTitle = styled.h1``;
 export { Nav, NavButton, TitleDiv, NavTitle, NavButtonContainer, NavContainer };

@@ -37,7 +37,14 @@ const Container = styled.div`
   width: 40%;
 `;
 
-const Header = styled.h2``;
+const Header = styled.h2`
+  font-family: monospace;
+  font-weight: bold;
+`;
+
+const Paragraph = styled.p`
+  font-family: monospace;
+`;
 
 const StyledSpan = styled.span`
   font-size: 3rem;
