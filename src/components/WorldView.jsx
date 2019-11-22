@@ -6,19 +6,38 @@ import { Graph } from 'react-d3-graph';
 
 const WorldView = ({ world, room }) => {
   const [currentNode, setCurrentNode] = useState();
-  const [nodes, setNodes] = useState(world.map(item => ({ id: item.id })));
+  let nodes = world.map(item => ({ id: item.id }));
+  let links = [];
+  let linksToCome = world.forEach(world => {
+    if (world['n_to'] !== 0) {
+      links.push({ source: world.id, target: world['n_to'] });
+    }
+    if (world['s_to'] !== 0) {
+      links.push({ source: world.id, target: world['s_to'] });
+    }
+    if (world['w_to'] !== 0) {
+      links.push({ source: world.id, target: world['w_to'] });
+    }
+    if (world['e_to'] !== 0) {
+      links.push({ source: world.id, target: world['e_to'] });
+    }
+  });
+  console.log('links to come', links);
+  //const [nodes, setNodes] = useState(stuffForNodes);
   const data = {
     nodes,
-    links: []
+    links
   };
   console.log(data.nodes);
 
   const options = {
+    /*
     automaticRearrangeAfterDropNode: false,
     collapsible: false,
     directed: false,
     focusAnimationDuration: 0.75,
     focusZoom: 1,
+    height: 400,
     highlightDegree: 1,
     highlightOpacity: 1,
     linkHighlightBehavior: true,
@@ -35,9 +54,9 @@ const WorldView = ({ world, room }) => {
       linkStrength: 1
     },
     node: {
-      color: '#d3d3d3',
+      color: 'green',
       fontColor: 'black',
-      fontSize: 8,
+      fontSize: 4,
       fontWeight: 'normal',
       highlightColor: 'SAME',
       highlightFontSize: 15,
@@ -47,8 +66,8 @@ const WorldView = ({ world, room }) => {
       mouseCursor: 'pointer',
       opacity: 1,
       renderLabel: false,
-      size: 400,
-      strokeColor: 'none',
+      size: 4,
+      strokeColor: 'red',
       strokeWidth: 3,
       svg: '',
       symbolType: 'circle'
@@ -67,6 +86,14 @@ const WorldView = ({ world, room }) => {
       renderLabel: false,
       semanticStrokeWidth: true,
       strokeWidth: 1.5
+    }*/ nodeHighlightBehavior: true,
+    node: {
+      color: 'lightgreen',
+      size: 120,
+      highlightStrokeColor: 'blue'
+    },
+    link: {
+      highlightColor: 'lightblue'
     }
   };
   const onNodePositionChange = function(nodeId, x, y) {
@@ -74,7 +101,7 @@ const WorldView = ({ world, room }) => {
       `Node ${nodeId} is moved to new position. New position is x= ${x} y= ${y}`
     );
   };
-
+  console.log('before container world', world.length);
   return (
     <Container>
       {world.length > 0 && (

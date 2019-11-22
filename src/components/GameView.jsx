@@ -19,6 +19,7 @@ const GameView = ({
   title,
   description
 }) => {
+  console.log('in game view', world);
   return (
     <View onKeyPress={moveHandler} tabIndex="0">
       <CurrentLocation title={title} description={description} />
@@ -27,7 +28,7 @@ const GameView = ({
         <Modal arr={players} title="Players" bool={isPlayersModalOpen} />
         <Modal arr={inventory} title="Inventory" bool={isInventoryModalOpen} />
       </div>
-      {/* <WorldView world={world} room={room} /> */}
+      {<WorldView world={world} room={room} />}
     </View>
   );
 };
@@ -35,7 +36,7 @@ const GameView = ({
 GameView.defaultProps = {
   world: [
     {
-      description: '',
+      description: 'SDsaDasd',
       e_to: null,
       n_to: null,
       w_to: null,

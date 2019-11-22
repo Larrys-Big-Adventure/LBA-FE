@@ -27,6 +27,7 @@ const Home = () => {
     axiosWithAuth()
       .get('api/adv/init/')
       .then(res => {
+        console.log('got the data back', res.data.world);
         setState({
           ...state,
           id: res.data.id,
