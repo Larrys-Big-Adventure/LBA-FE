@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const ControllersContainer = styled.div`
   width: 100%;
+  outline: none;
 `;
 const WASDContainer = styled.div`
   width: 212px;

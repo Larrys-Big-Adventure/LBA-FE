@@ -38,7 +38,7 @@ class ActionView extends Component {
 
   renderAction = item => {
     console.log(item);
-    return <ListItem key={item.id}>{item.action}</ListItem>;
+    return <ListItem key={item.id}>You: {item.action}</ListItem>;
   };
 
   render() {
