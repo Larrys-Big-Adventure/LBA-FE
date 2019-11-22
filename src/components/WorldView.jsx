@@ -5,8 +5,7 @@ import styled from 'styled-components';
 import { Graph } from 'react-d3-graph';
 
 const WorldView = ({ world, room }) => {
-  console.log(world[0]);
-  console.log(world);
+  console.log(room.id);
   const nodes = world.map(item => ({
     id: item.id,
     x: item.x,
@@ -16,6 +15,7 @@ const WorldView = ({ world, room }) => {
     color: item.id === room.id ? 'red' : 'lightblue',
     symbolType: item.id === room.id ? 'diamond' : 'circle'
   }));
+
   const links = [];
   world.forEach(item => {
     if (item.n_to !== 0) {

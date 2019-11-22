@@ -5,6 +5,7 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 import { Navigation, GameView, Controller, ActionView } from '../components';
 
 const Home = () => {
+  const [memoCount, setMemoCount] = useState(0);
   const [state, setState] = useState({
     id: null,
     userId: null,
@@ -50,11 +51,13 @@ const Home = () => {
 
   // move
   const moveDirection = direction => {
+    setMemoCount(memoCount + 1);
     axiosWithAuth()
       .post('api/adv/move/', { direction })
       .then(res => {
         setState({
           ...state,
+          id: res.data.id,
           name: res.data.name,
           title: res.data.title,
           players: res.data.players,
@@ -122,6 +125,7 @@ const Home = () => {
           title: state.title,
           description: state.description
         }}
+        memoCount={memoCount}
         loot={state.loot}
         moveHandler={moveHandler}
         players={state.players}

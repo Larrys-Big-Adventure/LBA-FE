@@ -11,6 +11,7 @@ const GameView = ({
   loot,
   world,
   room,
+  memoCount,
   players,
   inventory,
   isInventoryModalOpen,
@@ -27,7 +28,7 @@ const GameView = ({
         <Modal arr={players} title="Players" bool={isPlayersModalOpen} />
         <Modal arr={inventory} title="Inventory" bool={isInventoryModalOpen} />
       </div>
-      <WorldView world={world} room={room} />
+      <WorldView world={world} room={room} memoCount={memoCount}/>
     </View>
   );
 };
@@ -67,6 +68,7 @@ GameView.propTypes = {
       x: PropTypes.number
     })
   ),
+  memoCount: PropTypes.number.isRequired,
   room: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
