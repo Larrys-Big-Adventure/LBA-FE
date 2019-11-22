@@ -22,13 +22,18 @@ const GameView = ({
 }) => {
   return (
     <View onKeyPress={moveHandler} tabIndex="0">
-      <CurrentLocation title={title} description={description} />
+      <CurrentLocation
+        title={title}
+        description={description}
+        world={world}
+        room={room}
+      />
       <div>
         <Modal arr={loot} title="Loot" bool={isLootModalOpen} />
         <Modal arr={players} title="Players" bool={isPlayersModalOpen} />
         <Modal arr={inventory} title="Inventory" bool={isInventoryModalOpen} />
       </div>
-      <WorldView world={world} room={room} memoCount={memoCount}/>
+      <WorldView world={world} room={room} memoCount={memoCount} />
     </View>
   );
 };

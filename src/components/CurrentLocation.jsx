@@ -2,11 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const CurrentLocation = ({ title, description }) => {
+const CurrentLocation = ({ title, description, world, room }) => {
+  const currentNode = world.find(item => item.id === room.id);
+
+  console.log(currentNode);
   return (
     <Container>
       <Header>{title}</Header>
       <p>{description}</p>
+      {currentNode && (
+        <>
+          <p>
+            Available directions:
+            <StyledSpan>{currentNode.n_to !== 0 ? ' north' : ''}</StyledSpan>
+            <StyledSpan>{currentNode.s_to !== 0 ? ' south' : ''}</StyledSpan>
+            <StyledSpan>{currentNode.e_to !== 0 ? ' east' : ''}</StyledSpan>
+            <StyledSpan>{currentNode.w_to !== 0 ? ' west' : ''}</StyledSpan>
+          </p>
+        </>
+      )}
     </Container>
   );
 };
@@ -24,6 +38,10 @@ const Container = styled.div`
 `;
 
 const Header = styled.h2``;
+
+const StyledSpan = styled.span`
+  font-size: 3rem;
+`;
 
 CurrentLocation.propTypes = {
   title: PropTypes.string.isRequired,

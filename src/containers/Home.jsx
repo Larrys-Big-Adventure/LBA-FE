@@ -6,6 +6,7 @@ import { Navigation, GameView, Controller, ActionView } from '../components';
 
 const Home = () => {
   const [memoCount, setMemoCount] = useState(0);
+  const [currentNode, setCurrentNode] = useState();
   const [state, setState] = useState({
     id: null,
     userId: null,
@@ -46,6 +47,7 @@ const Home = () => {
         });
         localStorage.removeItem('token');
       });
+
     // eslint-disable-next-line
   }, []);
 
@@ -64,6 +66,9 @@ const Home = () => {
           error_msg: res.data.error_msg,
           description: res.data.description
         });
+
+        const node = state.world.find(item => item.id === res.data.id);
+        setCurrentNode(node);
       })
       .catch(err => {
         console.error(err);
@@ -114,7 +119,7 @@ const Home = () => {
       setPlayersModalOpen();
     }
   };
-
+  console.log(currentNode);
   return (
     <HomeContainer>
       <Navigation />
