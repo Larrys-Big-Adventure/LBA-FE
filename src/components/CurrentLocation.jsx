@@ -19,6 +19,7 @@ const Container = styled.div`
   text-align: center;
   padding: 10px 30px;
   top: 0;
+  z-index: 99;
   width: 40%;
 `;
 
