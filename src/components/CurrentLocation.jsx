@@ -9,7 +9,7 @@ const CurrentLocation = ({ title, description, world, room }) => {
   return (
     <Container>
       <Header>{title}</Header>
-      <p>{description}</p>
+      <Paragraph>{description}</Paragraph>
       {currentNode && (
         <>
           <p>
