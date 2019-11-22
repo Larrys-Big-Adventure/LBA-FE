@@ -14,7 +14,7 @@ const Global = css`
   h3,
   h4,
   h5 {
-    font-family: 'Poppins', 'Work Sans', sans-serif;
+    font-family: 'Monospace', 'Work Sans', sans-serif;
     line-height: 1.8;
     color: #333333;
   }

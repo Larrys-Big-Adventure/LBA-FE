@@ -22,6 +22,7 @@ const NavButton = styled.button`
   padding: 15px;
   cursor: pointer;
   border: 2px solid black;
+  border-radius: 10px;
 `;
 
 const TitleDiv = styled.div``;
