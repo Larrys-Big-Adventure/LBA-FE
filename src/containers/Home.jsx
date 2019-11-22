@@ -7,10 +7,12 @@ import { Navigation, GameView, Controller, ActionView } from '../components';
 const Home = () => {
   const [state, setState] = useState({
     id: null,
+    userId: null,
     name: '',
     error: '',
     title: '',
     loot: [],
+    world: [],
     players: [],
     inventory: [],
     error_msg: '',
@@ -27,8 +29,10 @@ const Home = () => {
       .then(res => {
         setState({
           ...state,
-          id: res.data.uuid,
+          id: res.data.id,
+          userId: res.data.uuid,
           name: res.data.name,
+          world: res.data.world,
           title: res.data.title,
           players: res.data.players,
           description: res.data.description
@@ -39,6 +43,7 @@ const Home = () => {
           ...state,
           error: ''
         });
+        localStorage.removeItem('token');
       });
     // eslint-disable-next-line
   }, []);
@@ -57,11 +62,9 @@ const Home = () => {
           description: res.data.description
         });
       })
-      .catch(() => {
-        setState({
-          ...state,
-          error: ''
-        });
+      .catch(err => {
+        console.error(err);
+        localStorage.removeItem('token');
       });
   };
 
@@ -109,12 +112,16 @@ const Home = () => {
     }
   };
 
-  console.log(state.title);
-  console.log(state.description);
   return (
     <HomeContainer>
       <Navigation />
       <GameView
+        world={state.world}
+        room={{
+          id: state.id,
+          title: state.title,
+          description: state.description
+        }}
         loot={state.loot}
         moveHandler={moveHandler}
         players={state.players}
