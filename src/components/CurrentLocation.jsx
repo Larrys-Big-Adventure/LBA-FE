@@ -6,7 +6,7 @@ const CurrentLocation = ({ title, description }) => {
   return (
     <Container>
       <Header>{title}</Header>
-      <p>{description}</p>
+      <Paragraph>{description}</Paragraph>
     </Container>
   );
 };
@@ -23,7 +23,14 @@ const Container = styled.div`
   width: 40%;
 `;
 
-const Header = styled.h2``;
+const Header = styled.h2`
+  font-family: monospace;
+  font-weight: bold;
+`;
+
+const Paragraph = styled.p`
+  font-family: monospace;
+`;
 
 CurrentLocation.propTypes = {
   title: PropTypes.string.isRequired,
