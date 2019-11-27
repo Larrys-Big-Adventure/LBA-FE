@@ -12,10 +12,12 @@ import {
   ErrorMessage
 } from '../styles/AuthCard';
 
+import { TextInput, Button, Container } from 'nes-react';
+
 const RegisterForm = ({ errors, touched }) => {
   return (
-    <AuthForm action="">
-      <AuthInput
+    <Container action="">
+      <TextInput
         component="input"
         type="text"
         name="username"
@@ -24,7 +26,7 @@ const RegisterForm = ({ errors, touched }) => {
       {touched.username && errors.username && (
         <ErrorMessage>{errors.username}</ErrorMessage>
       )}
-      <AuthInput
+      <TextInput
         component="input"
         type="password"
         name="password1"
@@ -33,7 +35,7 @@ const RegisterForm = ({ errors, touched }) => {
       {touched.password1 && errors.password1 && (
         <ErrorMessage>{errors.password1}</ErrorMessage>
       )}
-      <AuthInput
+      <TextInput
         component="input"
         type="password"
         name="password2"
@@ -42,8 +44,10 @@ const RegisterForm = ({ errors, touched }) => {
       {touched.password2 && errors.password2 && (
         <ErrorMessage>{errors.password2}</ErrorMessage>
       )}
-      <AuthButton type="submit">Submit</AuthButton>
-    </AuthForm>
+      <Button primary type="submit">
+        Submit
+      </Button>
+    </Container>
   );
 };
 

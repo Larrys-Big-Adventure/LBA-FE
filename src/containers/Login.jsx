@@ -17,7 +17,7 @@ const Login = ({ history }) => {
         href="https://fonts.googleapis.com/css?family=Press+Start+2P"
         rel="stylesheet"
       />
-      <Container>
+      <Container rounded>
         <GameTitle />
         <AuthTitle>Login</AuthTitle>
         <LoginForm history={history} />
