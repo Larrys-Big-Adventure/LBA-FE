@@ -50,28 +50,34 @@ class ActionView extends Component {
 
   renderAction = item => {
     console.log(item);
-    return <ListItem key={item.id}>You: {item.action}</ListItem>;
+    return <li key={item.id}>You: {item.action}</li>;
   };
 
   render() {
     return (
       <ActionViewContainer>
-        <TextContainer>
-          {this.state.actions.map(this.renderAction)}
-        </TextContainer>
-        <UserInputContainer>
-          <Form onSubmit={this.submit}>
-            <InputField
-              type="text"
-              name="userInput"
-              id="userinput"
-              placeholder="user input field"
-              onChange={this.handleInputChange}
-              value={this.state.userInput}
-            />
-            <SendButton type="submit">Send</SendButton>
-          </Form>
-        </UserInputContainer>
+        <Container>
+          <link
+            href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+            rel="stylesheet"
+          />
+          <TextContainer>
+            {this.state.actions.map(this.renderAction)}
+          </TextContainer>
+          <UserInputContainer>
+            <Form onSubmit={this.submit}>
+              <TextInput
+                type="text"
+                name="userInput"
+                id="userinput"
+                placeholder="user input field"
+                onChange={this.handleInputChange}
+                value={this.state.userInput}
+              />
+              <Button type="submit">Send</Button>
+            </Form>
+          </UserInputContainer>
+        </Container>
       </ActionViewContainer>
     );
   }
