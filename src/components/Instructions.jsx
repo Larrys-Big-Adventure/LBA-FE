@@ -1,29 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Instructions = () => (
-  <Container>
-    <Header>instructions</Header>
-    <ContentContainer>
-      <div>
-        <p>W: North</p>
-        <p>A: West</p>
-        <p>S: South</p>
-        <p>D: East</p>
-      </div>
-      <div>
-        <p>/say:</p>
-        <p>drop Item</p>
-        <p>take Item</p>
-      </div>
-      <div>
-        <p>L: Room Loot</p>
-        <p>I: Inventory</p>
-        <p>P: Player List</p>
-      </div>
-    </ContentContainer>
-  </Container>
-);
+import { Component } from 'react';
+class Instructions extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <Container>
+        <link
+          href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+          rel="stylesheet"
+        />
+        <Header>instructions</Header>
+        <ContentContainer>
+          <div>
+            <p>W: North</p>
+            <p>A: West</p>
+            <p>S: South</p>
+            <p>D: East</p>
+          </div>
+          <div>
+            <p>/say:</p>
+            <p>drop Item</p>
+            <p>take Item</p>
+          </div>
+          <div>
+            <p>L: Room Loot</p>
+            <p>I: Inventory</p>
+            <p>P: Player List</p>
+          </div>
+        </ContentContainer>
+      </Container>
+    );
+  }
+}
 
 const Container = styled.div`
   border: 2px solid black;
