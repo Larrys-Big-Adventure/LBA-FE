@@ -9,16 +9,25 @@ import {
   AuthCardContainer
 } from '../styles/AuthCard';
 
+import { Container } from 'nes-react';
+
 const Register = ({ history }) => {
   return (
     <AuthCardContainer>
-      <GameTitle />
-      <AuthTitle>Sign up</AuthTitle>
-      <RegisterForm history={history} />
-      <BottomMessage>
-        Already have an account?
-        <Link to="/login"> Log in</Link>
-      </BottomMessage>
+      <Container>
+        <Container>Larry's Leisurely Adventure Game</Container>
+
+        <Container>Sign up</Container>
+        <RegisterForm history={history} />
+        <Container>
+          <link
+            href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+            rel="stylesheet"
+          />
+          Already have an account?
+          <Link to="/login"> Log in</Link>
+        </Container>
+      </Container>
     </AuthCardContainer>
   );
 };

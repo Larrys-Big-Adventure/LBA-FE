@@ -17,6 +17,10 @@ import { TextInput, Button, Container } from 'nes-react';
 const RegisterForm = ({ errors, touched }) => {
   return (
     <Container action="">
+      <link
+        href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+        rel="stylesheet"
+      />
       <TextInput
         component="input"
         type="text"

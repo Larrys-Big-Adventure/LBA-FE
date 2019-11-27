@@ -18,13 +18,14 @@ const Login = ({ history }) => {
         rel="stylesheet"
       />
       <Container rounded>
-        <GameTitle />
-        <AuthTitle>Login</AuthTitle>
+        <Container>Larry's Leisurely Adventure Game</Container>
+
+        <Container>Login</Container>
         <LoginForm history={history} />
-        <BottomMessage>
+        <Container>
           Dont have an account?
           <Link to="/register"> Sign up</Link>
-        </BottomMessage>
+        </Container>
       </Container>
     </AuthCardContainer>
   );
