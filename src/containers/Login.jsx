@@ -9,16 +9,23 @@ import {
   AuthCardContainer
 } from '../styles/AuthCard';
 
+import { Container, Button, TextInput } from 'nes-react';
 const Login = ({ history }) => {
   return (
     <AuthCardContainer>
-      <GameTitle />
-      <AuthTitle>Login</AuthTitle>
-      <LoginForm history={history} />
-      <BottomMessage>
-        Dont have an account?
-        <Link to="/register"> Sign up</Link>
-      </BottomMessage>
+      <link
+        href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+        rel="stylesheet"
+      />
+      <Container>
+        <GameTitle />
+        <AuthTitle>Login</AuthTitle>
+        <LoginForm history={history} />
+        <BottomMessage>
+          Dont have an account?
+          <Link to="/register"> Sign up</Link>
+        </BottomMessage>
+      </Container>
     </AuthCardContainer>
   );
 };
