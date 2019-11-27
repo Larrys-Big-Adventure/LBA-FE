@@ -9,6 +9,18 @@ import {
   Form
 } from '../styles/ActionView';
 
+import {
+  Container,
+  Button,
+  Icon,
+  Sprite,
+  ControllerIcon,
+  Table,
+  List,
+  TextArea,
+  TextInput
+} from 'nes-react';
+
 class ActionView extends Component {
   constructor(props) {
     super(props);

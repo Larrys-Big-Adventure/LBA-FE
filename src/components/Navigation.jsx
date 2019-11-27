@@ -11,6 +11,18 @@ import {
   NavButtonContainer
 } from '../styles/Nav';
 
+import {
+  Container,
+  Button,
+  Icon,
+  Sprite,
+  ControllerIcon,
+  Table,
+  List,
+  TextArea,
+  TextInput
+} from 'nes-react';
+
 const Navigation = ({ history }) => {
   const logOut = () => {
     window.localStorage.clear();
@@ -19,14 +31,22 @@ const Navigation = ({ history }) => {
 
   return (
     <NavContainer>
-      <Nav>
-        <TitleDiv>
-          <NavTitle>Larrys Leisurely Adventure</NavTitle>
-        </TitleDiv>
-        <NavButtonContainer>
-          <NavButton onClick={logOut}>Log Out</NavButton>
-        </NavButtonContainer>
-      </Nav>
+      <link
+        href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+        rel="stylesheet"
+      />
+      <Container>
+        <Nav>
+          <TitleDiv>
+            <NavTitle>Larrys Leisurely Adventure</NavTitle>
+          </TitleDiv>
+          <NavButtonContainer>
+            <Button warning onClick={logOut}>
+              Log Out
+            </Button>
+          </NavButtonContainer>
+        </Nav>
+      </Container>
     </NavContainer>
   );
 };
