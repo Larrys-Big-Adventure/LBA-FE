@@ -16,7 +16,7 @@ const LoginForm = ({ errors, touched }) => {
   return (
     <AuthForm action="">
       <Container>
-        <TextInput
+        <input
           component="input"
           type="text"
           name="username"
@@ -25,7 +25,7 @@ const LoginForm = ({ errors, touched }) => {
         {touched.username && errors.username && (
           <ErrorMessage>{errors.username}</ErrorMessage>
         )}
-        <TextInput
+        <input
           component="input"
           type="password"
           name="password"
