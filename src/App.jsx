@@ -10,8 +10,8 @@ function App() {
     <>
       <GlobalStyle />
       <Switch>
-        <PrivateRoute exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
+        <PrivateRoute path="/home" component={Home} />
+        <Route exact path="/" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="*" component={NoMatch} />
       </Switch>

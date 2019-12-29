@@ -15,29 +15,27 @@ import { TextInput, Button, Container } from 'nes-react';
 const LoginForm = ({ errors, touched }) => {
   return (
     <AuthForm action="">
-      <Container>
-        <input
-          component="input"
-          type="text"
-          name="username"
-          placeholder="Username"
-        />
-        {touched.username && errors.username && (
-          <ErrorMessage>{errors.username}</ErrorMessage>
-        )}
-        <input
-          component="input"
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        {touched.password && errors.password && (
-          <ErrorMessage>{errors.password}</ErrorMessage>
-        )}
-        <Button primary type="submit">
-          Submit
-        </Button>
-      </Container>
+      <AuthInput
+        component="input"
+        type="text"
+        name="username"
+        placeholder="Username"
+      />
+      {touched.username && errors.username && (
+        <ErrorMessage>{errors.username}</ErrorMessage>
+      )}
+      <AuthInput
+        component="input"
+        type="password"
+        name="password"
+        placeholder="Password"
+      />
+      {touched.password && errors.password && (
+        <ErrorMessage>{errors.password}</ErrorMessage>
+      )}
+      <AuthButton primary type="submit">
+        Submit
+      </AuthButton>
     </AuthForm>
   );
 };

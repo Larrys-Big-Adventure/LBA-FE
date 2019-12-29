@@ -16,12 +16,12 @@ import { TextInput, Button, Container } from 'nes-react';
 
 const RegisterForm = ({ errors, touched }) => {
   return (
-    <Container action="">
+    <AuthForm action="">
       <link
         href="https://fonts.googleapis.com/css?family=Press+Start+2P"
         rel="stylesheet"
       />
-      <TextInput
+      <AuthInput
         component="input"
         type="text"
         name="username"
@@ -30,7 +30,7 @@ const RegisterForm = ({ errors, touched }) => {
       {touched.username && errors.username && (
         <ErrorMessage>{errors.username}</ErrorMessage>
       )}
-      <TextInput
+      <AuthInput
         component="input"
         type="password"
         name="password1"
@@ -39,7 +39,7 @@ const RegisterForm = ({ errors, touched }) => {
       {touched.password1 && errors.password1 && (
         <ErrorMessage>{errors.password1}</ErrorMessage>
       )}
-      <TextInput
+      <AuthInput
         component="input"
         type="password"
         name="password2"
@@ -48,10 +48,10 @@ const RegisterForm = ({ errors, touched }) => {
       {touched.password2 && errors.password2 && (
         <ErrorMessage>{errors.password2}</ErrorMessage>
       )}
-      <Button primary type="submit">
+      <AuthButton primary type="submit">
         Submit
-      </Button>
-    </Container>
+      </AuthButton>
+    </AuthForm>
   );
 };
 
@@ -87,7 +87,7 @@ const handleSubmit = (values, { props, resetForm }) => {
     .post(`${process.env.REACT_APP_BASE_URL}api/registration/`, values)
     .then(res => {
       localStorage.setItem('token', res.data.key);
-      props.history.push('/');
+      props.history.push('/home');
     })
     .catch(err => {
       console.error(err); // eslint-disable-line
